@@ -1,0 +1,70 @@
+#{extends 'main.html' /}
+#{set titulo:post.titulo /}
+<ul id="pagination">
+    #{if post.previous()}
+        <li id="previous">
+            <a href="@{Application.show(post.previous().id)}">
+                ${post.previous().titulo}
+            </a>
+        </li>
+    #{/if}
+    #{if post.next()}
+        <li id="next">
+            <a href="@{Application.show(post.next().id)}">
+                ${post.next().titulo}
+            </a>
+        </li>
+    #{/if}
+</ul>
+
+#{if flash.success}
+    <p class="success">${flash.success}</p>
+#{/if}
+ 
+#{display post:post, as:'full' /}
+<h3>Post um comentario</h3>
+ 
+#{form @Application.postComentario(post.id)}
+	#{ifErrors}
+        <p class="error">
+       		${errors[0]}
+    	</p>
+    #{/ifErrors}
+    <p>
+        <label for="author">Seu nome: </label>
+        <input type="text" name="autor" id="autor" value="${params.autor}"/>
+    </p>
+    <p>
+        <label for="content">Mensagem: </label>
+        <textarea name="conteudo" id="conteudo" value="${params.conteudo}"></textarea>
+    </p>
+    <p>
+    	<label for="code">Please type the code below: </label>
+    	<img src="@{Application.captcha(randomID)}" />
+    	<br />
+    	<input type="text" name="code" id="code" size="18" value="" />
+    	<input type="hidden" name="randomID" value="${randomID}" />
+	</p>
+    <p>
+        <input type="submit" value="Enviar comentario" />
+    </p>
+#{/form}
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {         
+        // Expose the form 
+        $('form').click(function() { 
+            $('form').expose({api: true}).load(); 
+        }); 
+        
+        // If there is an error, focus to form
+        if($('form .error').size()) {
+            $('form').expose({api: true, loadSpeed: 0}).load(); 
+            $('form input[type=text]').get(0).focus();
+        }
+    });
+</script>
+

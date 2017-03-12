@@ -1,0 +1,45 @@
+#{extends 'admin.html' /}
+ 
+#{ifnot post?.id}
+	<h3>Escreva, <span>um novo post</span></h3>
+#{/ifnot}
+#{else}
+	<h3>Edite, <span>este post</span></h3>
+#{/else}
+#{form @save(post?.id)}
+ 
+    #{ifErrors}
+        <p class="error">
+            Please correct these errors.
+        </p>
+    #{/ifErrors}
+     
+    <p>
+        #{field 'titulo'}
+        <label>Titulo do Post:</label>
+        <input type="text" name="${field.name}" 
+            value="${post?.titulo}" />
+        <span class="error">#{error 'post.titulo' /}</span>
+        #{/field}
+    </p>
+ <p>
+        #{field 'conteudo'}
+        <label>Escreva aqui:</label>
+        	<textarea name="${field.name}">${post?.conteudo}</textarea>
+        <span class="error">#{error 'post.titulo' /}</span>
+        #{/field}
+    </p>
+ 
+    <p>
+        #{field 'tags'}
+        <label>Entre com algumas tags:</label>
+        <input type="text" size="50" 
+            name="${field.name}" value="${post?.tags?.join(' ')}" />
+        #{/field}
+    </p>
+    
+    <p>
+        <input type="submit" value="Publicar post no blog" />
+    </p>
+    
+#{/form}

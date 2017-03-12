@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{if postFrente}
+    
+    #{display post:postFrente, as:'home' /}
+    
+    #{if postVelhos.size()}
+    
+        <div class="older-posts">
+            <h3>Post Antigos<span class="from"> do Blog</span></h3>
+        
+            #{list items:postVelhos, as:'postAntigo'}
+                #{display post:postAntigo, as:'teaser' /}
+            #{/list}
+        </div>
+        
+    #{/if}
+    
+#{/if}
+ 
+#{else}
+    <div class="empty">
+        There is currently nothing to read here.
+    </div>
+#{/else}
+
+

@@ -1,0 +1,81 @@
+# Test de dados
+
+Usuario(bob):
+    email:          bob@gmail.com
+    senha:          secret
+    nomeCompleto:   bob
+    eAdmin:         false
+    
+
+Usuario(jackson):
+    email:          jacksonlira.rs@gmail.com
+    senha:          rs101311
+    nomeCompleto:   jackson
+    eAdmin:         true
+    
+Tag(play):
+    nome:           Play
+ 
+Tag(arquitetura):
+    nome:           Arquitetura
+ 
+Tag(teste):
+    nome:           Teste
+ 
+Tag(mvc):
+    nome:           MVC
+    
+
+Post(primeiroPostJackson):
+    titulo:         Testando o yml no play
+    dataPost:       2017-02-25
+    autor:          jackson
+    tags:           
+                    - play
+                    - arquitetura
+                    - mvc
+    conteudo:       >
+                    A configuração de uma população no banco de dados, para melhor realizar testes,
+                    é feito pela configuração de uma classe no pacote app/nome da classe, depois,
+                    configurando um arquivo em conf/initial-data.yml, aqui você pode popular as suas classe
+                    criadas no models/
+    
+Post(segundoPostJackson):
+    titulo:         As aplicações MVC      
+    dataPost:       2017-02-25
+    autor:          jackson
+    tags:           play
+    conteudo:       >
+                    As aplicações do Play! Segue o padrão da Arquitura MVC aplicado a Arquitetura Web
+                    
+                    This pattern splits the application into separate layers: the Presentation 
+                    layer and the Model layer. The Presentation layer is further split into a 
+                    View and a Controller layer.
+
+Post(primeiroPostBob):
+    titulo:         Apenas testando o blog
+    dataPost:       2017-02-24
+    autor:          bob
+    conteudo:       Isso é apenas um teste
+    
+    
+    
+Comentario(c1):
+    autor:          Guest       
+    dataPost:       2017-02-25
+    conteudo:       Muito eclarecedor!
+    post:           primeiroPostJackson
+    
+Comentario(c2):
+    autor:          Jorge       
+    dataPost:       2017-02-25
+    conteudo:       Você está certo!
+    post:           segundoPostJackson
+    
+Comentario(c3):
+    autor:          Antonio       
+    dataPost:       2017-02-25
+    conteudo:       Good
+    post:           primeiroPostBob
+    
+    

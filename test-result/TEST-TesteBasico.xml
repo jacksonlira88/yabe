@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="1" time="0.191" errors="0" skipped="0" tests="5" name="TesteBasico">
+  <testcase classname="TesteBasico" name="criarERecuperarUsuario" time="0.04">
+      </testcase>
+  <testcase classname="TesteBasico" name="testTags" time="0.095">
+                  <failure type="" message="Failure, expected:&lt;[{[tag=Blue, pound=1}, {tag=Green, pound=1}, {tag=Red, pound=2]}]&gt; but was:&lt;[{[pound=1, tag=Blue}, {pound=1, tag=Green}, {pound=2, tag=Red]}]&gt;">
+        <![CDATA[
+          In /test/TesteBasico.java, line 168
+          
+              		    assertEquals( :
+          
+        ]]>
+        </failure>
+                  <system-err>
+            org.junit.ComparisonFailure: expected:&lt;[{[tag=Blue, pound=1}, {tag=Green, pound=1}, {tag=Red, pound=2]}]&gt; but was:&lt;[{[pound=1, tag=Blue}, {pound=1, tag=Green}, {pound=2, tag=Red]}]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at TesteBasico.testTags(TesteBasico.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at play.test.PlayJUnitRunner$StartPlay$2$1.evaluate(PlayJUnitRunner.java:128)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at play.test.PlayJUnitRunner.run(PlayJUnitRunner.java:70)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:94)
+	at play.test.TestEngine.run(TestEngine.java:188)
+	at controllers.TestRunner$1.doJobWithResult(TestRunner.java:101)
+	at controllers.TestRunner$1.doJobWithResult(TestRunner.java:1)
+	at play.jobs.Job$2.apply(Job.java:208)
+	at play.db.jpa.JPA.withTransaction(JPA.java:253)
+	at play.db.jpa.JPA.withinFilter(JPA.java:212)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:292)
+	at play.jobs.Job.withinFilter(Job.java:185)
+	at play.jobs.Job.call(Job.java:204)
+	at play.jobs.Job$1.call(Job.java:119)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+          </system-err>  
+        }
+                  </testcase>
+  <testcase classname="TesteBasico" name="criarPost" time="0.011">
+      </testcase>
+  <testcase classname="TesteBasico" name="tenteConectarUsuario" time="0.007">
+      </testcase>
+  <testcase classname="TesteBasico" name="useOsComentariosRelacao" time="0.024">
+      </testcase>
+  <testcase classname="TesteBasico" name="postarComentario" time="0.014">
+      </testcase>
+</testsuite>

@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <title>Test results for TesteBasico.class</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style type="text/css">
+            body {
+                font-family: Arial, Sans;
+                margin: 0;
+                padding: 0;
+            }
+            table {
+                width: 100%;
+            }
+            #header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            #results {
+                padding: 15px;
+            }
+            #header h1 {
+                margin-top: 0;
+            }
+            #header.success {
+                background: #81CF5A !important;
+            }
+            .passed span {
+                background: #81CF5A !important;
+                padding: 3px 5px;
+            }
+            #header.failed {
+                background: #EF6868 !important;
+            }
+            .failed span {
+                background: #EF6868 !important;
+                padding: 3px 5px;
+            }
+            table .source {
+                margin-top: 10px;
+            }
+            table .source span {
+                color: #fff;
+                font-size: 85%;
+                padding: 1px 3px;
+                background: #666;
+            }
+            table .sourceLine {
+                border-left: 3px solid #c00;
+                padding: 4px 3px;
+                color: #000;
+                font-size: 85%;
+                margin-bottom: 10px;
+            }
+            .error {
+                color: #c00;
+            }
+            table td {
+                padding: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="header" class="block failed">
+            <h1>
+                TesteBasico.class
+            </h1>
+            <p>
+                FAILED
+            </p>
+        </div>
+        
+        <div id="results">
+            <table>
+                                <tr>
+                    <td width="20%" class="passed" valign="top">
+                        <span>criarERecuperarUsuario</span>
+                    </td>
+                    <td class="" valign="top">
+                                                                        Ok
+                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        40 ms
+                    </td>
+                </tr>
+                                <tr>
+                    <td width="20%" class="failed" valign="top">
+                        <span>testTags</span>
+                    </td>
+                    <td class="error" valign="top">
+                                                <strong>Failure, expected:&lt;[{[tag=Blue, pound=1}, {tag=Green, pound=1}, {tag=Red, pound=2]}]&gt; but was:&lt;[{[pound=1, tag=Blue}, {pound=1, tag=Green}, {pound=2, tag=Red]}]&gt;</strong>
+                                                <div class="source">
+                            <span>In /test/TesteBasico.java, line 168 :</span>
+                        </div>
+                        <div class="sourceLine">
+                            <span>
+                                
+                                    		    assertEquals(
+                                
+                            </span>
+                        </div>
+                                                                        <a href="#" onclick="toggle_trace(this); return false;">Show trace</a>
+                        <pre data-role="trace">org.junit.ComparisonFailure: expected:<[{[tag=Blue, pound=1}, {tag=Green, pound=1}, {tag=Red, pound=2]}]> but was:<[{[pound=1, tag=Blue}, {pound=1, tag=Green}, {pound=2, tag=Red]}]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at TesteBasico.testTags(TesteBasico.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at play.test.PlayJUnitRunner$StartPlay$2$1.evaluate(PlayJUnitRunner.java:128)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at play.test.PlayJUnitRunner.run(PlayJUnitRunner.java:70)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:94)
+	at play.test.TestEngine.run(TestEngine.java:188)
+	at controllers.TestRunner$1.doJobWithResult(TestRunner.java:101)
+	at controllers.TestRunner$1.doJobWithResult(TestRunner.java:1)
+	at play.jobs.Job$2.apply(Job.java:208)
+	at play.db.jpa.JPA.withTransaction(JPA.java:253)
+	at play.db.jpa.JPA.withinFilter(JPA.java:212)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:292)
+	at play.jobs.Job.withinFilter(Job.java:185)
+	at play.jobs.Job.call(Job.java:204)
+	at play.jobs.Job$1.call(Job.java:119)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre>
+                                                                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        95 ms
+                    </td>
+                </tr>
+                                <tr>
+                    <td width="20%" class="passed" valign="top">
+                        <span>criarPost</span>
+                    </td>
+                    <td class="" valign="top">
+                                                                        Ok
+                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        11 ms
+                    </td>
+                </tr>
+                                <tr>
+                    <td width="20%" class="passed" valign="top">
+                        <span>tenteConectarUsuario</span>
+                    </td>
+                    <td class="" valign="top">
+                                                                        Ok
+                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        7 ms
+                    </td>
+                </tr>
+                                <tr>
+                    <td width="20%" class="passed" valign="top">
+                        <span>useOsComentariosRelacao</span>
+                    </td>
+                    <td class="" valign="top">
+                                                                        Ok
+                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        24 ms
+                    </td>
+                </tr>
+                                <tr>
+                    <td width="20%" class="passed" valign="top">
+                        <span>postarComentario</span>
+                    </td>
+                    <td class="" valign="top">
+                                                                        Ok
+                                            </td>
+                    <td width="5%" align="right" class="time" valign="top">
+                        14 ms
+                    </td>
+                </tr>
+                            </table>
+        </div>
+        
+    </body>
+</html>

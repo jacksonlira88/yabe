@@ -1,0 +1,59 @@
+*{ Display a post in one of these modes: 'full', 'home' or 'teaser' }*
+ 
+<div class="post ${_as == 'teaser' ? 'teaser' : ''}">
+   <h2 class="post-title">
+    	<a href="@{Application.show(_post.id)}">${_post.titulo}</a>
+	</h2>
+    <div class="post-metadata">
+        <span class="post-author">by ${_post.autor.nomeCompleto}</span>,
+        <span class="post-date">${_post.dataPost.format('dd MMM yy')}</span>
+     #{if _as != 'full'}
+            <span class="post-comments">
+                &nbsp;|&nbsp; ${_post.comentarios.size() ?: 'no'} 
+                comentario${_post.comentarios.size().pluralize()}
+                #{if _post.comentarios}
+                    , mais recente por ${_post.comentarios[-1].autor}
+                #{/if}
+            </span>
+    #{/if}
+    #{elseif _post.tags}
+    		<span class="post-tags">
+       		    - Tagged
+       		 	#{list items:_post.tags, as:'tag'}
+            		<a href="@{Application.listTagged(tag.nome)}">${tag}</a>${tag_isLast ? '' : ', '}
+       			 #{/list}
+    		</span>
+	#{/elseif}
+    </div>
+    #{if _as != 'teaser'}
+        <div class="post-content">
+            <div class="about">Detalhe: </div>
+            ${_post.conteudo.nl2br()}
+        </div>
+    #{/if}
+</div>
+ 
+#{if _as == 'full'}
+    <div class="comments">
+        <h3>
+            ${_post.comentarios.size() ?: 'no'} 
+            comment${_post.comentarios.size().pluralize()}
+        </h3>
+        
+        #{list items:_post.comentarios, as:'comentario'}
+            <div class="comment">
+                <div class="comment-metadata">
+                    <span class="comment-author">Por ${comentario.autor},</span>
+                    <span class="comment-date">
+                        ${comentario.dataPost.format('dd MMM yy')}
+                    </span>
+                </div>
+                <div class="comment-content">
+                    <div class="about">Detalhe: </div>
+                    ${comentario.conteudo.escape().nl2br()}
+                </div>
+            </div>
+        #{/list}
+        
+    </div>
+#{/if}

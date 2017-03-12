@@ -1,0 +1,14 @@
+#{extends 'admin.html' /}
+ 
+<h3>Bem vindo ${usuario}, <span>você tem escritos ${posts.size() ?: 'no'} 
+${posts.pluralize('post', 'posts')} tao longe </span></h3>
+ 
+#{list items:posts, as:'post'}
+    <p class="post ${post_parity}">
+        <a href="@{Admin.form(post.id)}">${post.titulo}</a>
+    </p>
+#{/list}
+ 
+<p id="newPost" >
+    <a href="@{form()}"><span>+</span> Escreva um novo post</a>
+</p>	

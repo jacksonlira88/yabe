@@ -1,0 +1,14 @@
+#{fixture delete:'all', load:'data.yml' /}
+#{selenium}
+clearSession()
+    // Open the home page, and check that no error occurred
+    open('/')
+    assertTextPresent('Apenas testando o blog')
+    assertTextPresent('por bob, 24 fev 17')
+    assertTextPresent('2 comentarios')
+   
+ 
+    // Check older posts
+    assertTextPresent('The MVC application')
+    assertTextPresent('Just a test of YABE')
+#{/selenium}

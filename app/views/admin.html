@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administração</title>		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        #{get 'moreStyles' /}	
+        <link rel="stylesheet" type="text/css" media="screen" 
+                href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" 
+                href="@{'/public/images/favicon.png'}" />
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"></script>
+        <script src="@{'/public/javascripts/jquery.tools.min.js'}"></script>
+    </head>
+    <body id="admin">
+        
+        <div id="header">
+            <div id="logo">
+                posts. <span>Administração</span>
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="@{Secure.logout()}">Sair</a>
+                </li>
+            </ul>
+        </div>
+        
+       <div id="main">
+    
+    <ul id="adminMenu">
+        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
+            <a href="@{Admin.index()}">Meus posts</a>
+        </li>
+        #{secure.check 'admin'}
+            <li class="${request.controller == 'Posts' ? 'selected' : ''}">
+                <a href="@{Posts.list()}">Posts</a>
+            </li>
+            <li class="${request.controller == 'Tags' ? 'selected' : ''}">
+                <a href="@{Tags.list()}">Tags</a>
+            </li>
+            <li class="${request.controller == 'Comentarios' ? 'selected' : ''}">
+                <a href="@{Comentarios.list()}">Comentarios</a>
+            </li>
+            <li class="${request.controller == 'Usuarios' ? 'selected' : ''}">
+                <a href="@{Usuarios.list()}">Usuarios</a>
+            </li>
+        #{/secure.check}
+    </ul>
+    
+    #{doLayout /} 
+</div>
+        
+        <p id="footer">
+            posts is a (not so) powerful blog engine built with the 
+            <a href="https://www.playframework.com">Play framework</a>
+            as a tutorial application.
+        </p>
+        
+    </body>
+</html>
